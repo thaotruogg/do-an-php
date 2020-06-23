@@ -171,14 +171,7 @@ session_start();
         </div>
     </main>
     <hr>
-    <footer class="container">
-        <div class="footer-line">
-            <p>Trường Đại Học Công Nghệ TP.Hồ Chí Minh</p>
-            <p>Khoa Công Nghệ Thông Tin</p>
-            <p>Lớp: 16DTHJE1</p>
-            <p>© 2020. Hoàng Trần Trí - Nguyễn Thị Kiều Thi - Trương Minh Thảo</p>
-        </div>
-    </footer>
+    <?php require_once("./components/footer.php"); ?>
     <script src="asset/js/jquery-3.3.1.min.js">
     </script>
     <script src="asset/js/popper.min.js">

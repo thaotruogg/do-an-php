@@ -249,14 +249,7 @@ session_start();
         </div>
     </main>
     <hr>
-    <footer class="container">
-        <div class="footer-line">
-            <p>Trường Đại Học Công Nghệ TP.Hồ Chí Minh (HUTECH)</p>
-            <p>Khoa Công Nghệ Thông Tin</p>
-            <p>Lớp : 15DTH13</p>
-            <p>© 2019. Kiến Đình Khôi - Trần Đình Sơn - Lê Trương Kim Tài - Nguyễn Thị Thu Hiền</p>
-        </div>
-    </footer>
+    <?php require_once("./components/footer.php"); ?>
     <script src="asset/js/jquery-3.3.1.min.js">
     </script>
     <script src="asset/js/popper.min.js">
