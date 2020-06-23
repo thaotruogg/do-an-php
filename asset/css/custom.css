@@ -1,0 +1,212 @@
+/* Overide Bootstrap */
+.bg-primary{
+    background-color: #337ab7;
+}
+
+.text-light{
+    color:#fff;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.bg-success{
+    background-color: #7bed9f;
+}
+.bg-primary{
+    background-color: #70a1ff;
+}
+.bg-danger{
+    background-color: #ff6348;
+}
+.bg-warning{
+    background-color: #ffa502;
+}
+/* Overide Bootstrap */
+body {
+    font-family: "Noto Sans", sans-serif;
+    cursor:default;
+}
+
+main{
+    margin-top:20px;
+}
+.form-calculate{
+    margin-top:20px;
+}
+.btn-room{
+    margin: 10px 0px 10px 0px;
+    width: 170px;
+    height: 70px;
+    font-size: 14px;
+}
+.main-table{
+    padding: 10px 10px 10px 10px
+}
+
+#accordion .card{
+    margin-bottom: 5px;
+}
+
+#breadcrumb{
+    margin-top:20px;
+}
+
+#navbarSupportedContent ul li{
+    margin-left: 20px;
+}
+
+.modal{
+    margin-top:5%;
+}
+
+#regisForm{
+    margin-top:10%;
+}
+.post-date{
+    font-size: 13px;
+}
+
+.username-highlight
+{
+    color:#DB3236;
+}
+img{
+    pointer-events: none;
+}
+
+a {
+    color: #096AAD;
+}
+
+.body-login {
+    margin-top: 10%;
+}
+
+.content-size {
+    font-size: 16px;
+}
+
+.sub-content-size {
+    font-size: 13px;
+}
+
+.title-size {
+    font-size: 26px;
+}
+
+.sub-title-size {
+    font-size: 20px;
+}
+
+.big-title-size {
+    font-size: 42px;
+}
+#txtAccount{
+    margin-bottom:20px;
+    margin-top:10px;
+}
+#txtPassword{
+    margin-bottom:20px;
+}
+.footer-line p {
+    display: block;
+    width: 100%;
+    margin: auto;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
+.user-info tr td{
+    width: 10%;
+}
+.panel-room-info-checkin{
+    padding-bottom: 25px;
+}
+/* Go to top */
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4885ED;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: #1885ED;
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+.label-floor{
+    font-size: 20px;
+}
+.btn-user{
+    margin-top: 3px;
+}
+.details-panel{
+    height: 430px;
+}
+#btnCalculate{
+    margin-top:10px;
+}
+.btnUserConfig{
+    margin-top:0px;
+}
