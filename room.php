@@ -3,29 +3,14 @@ session_start();
 ?>
 <!doctype html>
 <html lang="vi">
-
-<head>
-    <title>Google House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="asset/favicon.ico">
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/custom.css">
-    <link rel="stylesheet" href="asset/css/all.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-</head>
+<!-- HEAD TAG -->
+<?php require_once("./components/head-tag.php") ?>
 
 <body>
     <?php
-    $connect = mysqli_connect('localhost', 'root', '', 'qlnt');
-    mysqli_set_charset($connect, "utf8");
+        $connect = mysqli_connect('localhost', 'root', '', 'qlnt');
+        mysqli_set_charset($connect, "utf8");
     ?>
-    <!-- 
-        Author: Khoi
-        Date  : 21/03/2019 9:49 AM
-        Task  : Làm chức năng thêm phòng
-    -->
     <?php 
     if (isset($_POST["btnAddRoom"])) {
         $cmbFloor    = $_POST["cmbFloor"];
@@ -251,15 +236,8 @@ session_start();
     </main>
     <hr>
     <?php require_once("./components/footer.php"); ?>
-    <script src="asset/js/jquery-3.3.1.min.js">
-    </script>
-    <script src="asset/js/popper.min.js">
-    </script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/custom.js">
-    </script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <?php require_once("./components/script-tag.php"); ?>
+
     <script>
         $(document).ready(function() {
             // Việt hóa datatable

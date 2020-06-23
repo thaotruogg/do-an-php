@@ -3,18 +3,8 @@ session_start();
 ?>
 <!doctype html>
 <html lang="vi">
-
-<head>
-    <title>Google House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="asset/favicon.ico">
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/custom.css">
-    <link rel="stylesheet" href="asset/css/all.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-</head>
+<!-- HEAD TAG -->
+<?php require_once("./components/head-tag.php") ?>
 
 <body>
     <?php
@@ -34,40 +24,33 @@ session_start();
     ?>
 
     <?php
-    $arrs_tang = mysqli_query($connect, "
-            select * from tang
-        ");
+    $arrs_tang = mysqli_query($connect, "select * from tang");
     $total_record = mysqli_num_rows($arrs_tang);
-    $arr_dichvu = mysqli_query($connect, "
-                            select * from dichvu where id = 1
-                        ");
+    $arr_dichvu = mysqli_query($connect, "select * from dichvu where id = 1");
     foreach ($arr_dichvu as $dien) {
         $tiendien = $dien["SoTien"];
     }
-    $arr_dichvu2 = mysqli_query($connect, "
-                            select * from dichvu where id = 2
-                        ");
+    $arr_dichvu2 = mysqli_query($connect, "select * from dichvu where id = 2");
     foreach ($arr_dichvu2 as $nuoc) {
         $tiennuoc = $nuoc["SoTien"];
     }
-    $arr_dichvu3 = mysqli_query($connect, "
-                            select * from dichvu where id = 4
-                        ");
+    $arr_dichvu3 = mysqli_query($connect, "select * from dichvu where id = 4");
     foreach ($arr_dichvu3 as $internet) {
         $tieninternet = $internet["SoTien"];
     }
     ?>
+
     <?php require_once('header.php') ?>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col d-flex flex-row">
                     <!-- Tầng + Phòng -->
-                    <div class="col-10">
+                    <div class="col-lg-8 col-xl-8 col-md-7 col-sm-6">
                         <div class="card">
                             <?php for ($i = 1; $i <= $total_record; $i++) { ?>
-                                <div class="card-header label-floor">
-                                    <i class="far fa-building text-primary"></i> Tầng <?php echo $i ?>
+                                <div class="card-header label-floor text-bold text-primary">
+                                    <i class="far fa-building text-primary mr-2"></i>TẦNG <?php echo $i ?>
                                 </div>
 
                                 <?php
@@ -112,25 +95,16 @@ session_start();
                             <?php
                             } ?>
                         </div>
-                        <!-- Chú thích -->
-                        <h6><em><i class="fas fa-info-circle text-primary"></i> <u>Chú thích:</u></em></h6>
-                        <div>
-                            <i class="fas fa-square text-success"></i>: Phòng trống
-                            <i class="fas fa-square text-warning"></i>: Sắp hết hạn
-                            <i class="fas fa-square text-danger"></i>: Đã có người thuê
-                        </div>
                     </div>
                     <!-- Phí sinh hoạt -->
-                    <div class="col-2" align="center">
+                    <div class="col-lg-4 col-xl-4 col-md-5 col-sm-6">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title text-danger font-weight-bold">Phí sinh hoạt</h5>
-                                <h6 class="card-subtitle mb-2 text-muted blockquote-footer">Tính theo định giá của nhà nước
-                                </h6>
+                                <h5 class="card-title text-danger font-weight-bold text-center">Phí sinh hoạt</h5>
+                                <h6 class="card-subtitle mb-2 text-muted blockquote-footer">Tính theo định giá của nhà nước</h6>
+                                <h6 class="card-subtitle mb-2 text-muted blockquote-footer">Internet 5G</h6>
                                 <?php
-                                $arrs_dichvu = mysqli_query($connect, "
-                                    select * from dichvu
-                                ");
+                                $arrs_dichvu = mysqli_query($connect, "select * from dichvu");
                                 ?>
 
                                 <table>
@@ -139,22 +113,22 @@ session_start();
                                             <td><strong>
                                                     <?php
                                                     if ($arrDichVu["TenDichVu"] == "Điện")
-                                                        echo  '<i class="fas fa-bolt"></i>&nbsp;&nbsp;';
+                                                        echo  '<i class="fas fa-bolt mr-3"></i>';
                                                     else if ($arrDichVu["TenDichVu"] == "Nước")
-                                                        echo  '<i class="fas fa-tint"></i>&nbsp;&nbsp;';
+                                                        echo  '<i class="fas fa-tint mr-3"></i>';
                                                     else
-                                                        echo  '<i class="fas fa-wifi"></i>';
+                                                        echo  '<i class="fas fa-wifi mr-2"></i>';
                                                     ?>
                                                     <?php echo  $arrDichVu["TenDichVu"] ?>:</strong></td>
                                             <td>
                                                 <span class="text-info">
                                                     <?php
                                                     if ($arrDichVu["TenDichVu"] == "Điện")
-                                                        echo  '<span id="format-dien">' . $arrDichVu["SoTien"] . '</span>' . " /kWh";
+                                                        echo  '<span id="format-dien" class="ml-2">' . $arrDichVu["SoTien"] . '</span>' . " /kWh";
                                                     else if ($arrDichVu["TenDichVu"] == "Nước")
-                                                        echo  '<span id="format-nuoc">' . $arrDichVu["SoTien"] . '</span>' . " /m<sup>2</sup>";
+                                                        echo  '<span id="format-nuoc" class="ml-2">' . $arrDichVu["SoTien"] . '</span>' . " /m<sup>2</sup>";
                                                     else
-                                                        echo  '<span id="format-wifi">' . $arrDichVu["SoTien"] . '</span>' . " /tháng";
+                                                        echo  '<span id="format-wifi" class="ml-2">' . $arrDichVu["SoTien"] . '</span>' . " /tháng";
                                                     ?>
                                                 </span>
                                             </td>
@@ -165,6 +139,19 @@ session_start();
                                 </table>
                             </div>
                         </div>
+                        <!-- Chú thích -->
+                        <h6><em><i class="fas fa-info-circle text-primary"></i> <u>Chú thích:</u></em></h6>
+                        <div class="d-flex flex-column">
+                            <span class="mr-3">
+                                <i class="fas fa-square text-success mr-2"></i> Phòng trống
+                            </span>
+                            <span class="mr-3">
+                                <i class="fas fa-square text-warning mr-2"></i> Sắp hết hạn
+                            </span>
+                            <span class="mr-3">
+                                <i class="fas fa-square text-danger mr-2"></i> Đã có người thuê
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,15 +159,8 @@ session_start();
     </main>
     <hr>
     <?php require_once("./components/footer.php"); ?>
-    <script src="asset/js/jquery-3.3.1.min.js">
-    </script>
-    <script src="asset/js/popper.min.js">
-    </script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/custom.js">
-    </script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <?php require_once("./components/script-tag.php"); ?>
+
     <script>
         $(document).ready(function() {
             // Gán link cho tr của table

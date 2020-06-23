@@ -4,17 +4,8 @@
 <!doctype html>
 <html lang="vi">
 
-<head>
-    <title>Google House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="asset/favicon.ico">
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/custom.css">
-    <link rel="stylesheet" href="asset/css/all.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-</head>
+<!-- HEAD TAG -->
+<?php require_once("./components/head-tag.php") ?>
 
 <body>
     <?php
@@ -191,7 +182,7 @@
             </nav>
             <div class="row">
                 <!-- Thông tin khách hàng -->
-                <div class="col-md-5">
+                <div class="col-5">
                     <div class="card details-panel">
                         <div class="card-body">
                             <h5 class="card-title text-danger font-weight-bold">Thông tin khách hàng</h5>
@@ -246,7 +237,7 @@
                     </div>
                 </div>
                 <!-- Thông tin Phòng -->
-                <div class="col-md-4">
+                <div class="col-4">
                     <div class="card details-panel">
                         <div class="card-body">
                             <h5 class="card-title text-danger font-weight-bold">Thông tin Phòng</h5>
@@ -255,18 +246,15 @@
                             <hr>
                             <table>
                                 <tr>
-                                    <td><strong><i class="fas fa-home"></i>
-                                            Phòng:</strong></td>
+                                    <td><strong><i class="fas fa-home"></i>Phòng:</strong></td>
                                     <td>
                                         <span class="text-primary font-weight-bold"><?php echo $tentang . " - Phòng " . $tenphong ?></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong><i class="fas fa-file-invoice-dollar"></i>
-                                            &nbsp;Giá thuê:</strong></td>
+                                    <td><strong><i class="fas fa-file-invoice-dollar"></i>Giá thuê:</strong></td>
                                     <td>
-                                        <span class="text-dark"><span id="format-giathue"><?php echo $giathue ?></span>
-                                        ₫ /tháng</span>
+                                        <span class="text-dark"><span id="format-giathue"><?php echo $giathue ?></span> ₫/tháng</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -293,19 +281,17 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong><i class="fas fa-calendar"></i>
-                                            &nbsp;&nbsp;Hết Hợp đồng:</strong></td>
+                                    <td><strong><i class="fas fa-calendar"></i>&nbsp;&nbsp;Hết Hợp đồng:</strong></td>
                                     <td>
                                         <span class="text-danger"><?php echo date('d/m/Y', strtotime($hethopdong)); ?></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><strong><i class="fas fa-image"></i>
-                                            &nbsp;&nbsp;Ảnh hợp đồng:</strong></td>
+                                <!-- <tr>
+                                    <td><strong><i class="fas fa-image"></i>&nbsp;&nbsp;Ảnh hợp đồng:</strong></td>
                                     <td>
                                         <a href="#" data-toggle="modal" data-target="#convenantModal"><i class="far fa-eye"></i> Bấm để xem</a>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </table>
                             <hr>
                             <button class="btn btn-danger" type="button" class="btn btn-primary" data-toggle="modal" data-target="#returnRoomModal"><i class="fas fa-redo-alt"></i> Trả phòng</button>
@@ -314,7 +300,7 @@
                     </div>
                 </div>
                 <!-- Tính tiền tháng -->
-                <div class="col-md-3">
+                <div class="col-3">
                     <div class="card details-panel">
                         <div class="card-body">
                             <h5 class="card-title text-danger font-weight-bold">Thanh toán</h5>
@@ -539,15 +525,8 @@
     <hr>
     <?php require_once("./components/footer.php"); ?>
     
-    <script src="asset/js/jquery-3.3.1.min.js">
-    </script>
-    <script src="asset/js/popper.min.js">
-    </script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/custom.js">
-    </script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <?php require_once("./components/script-tag.php"); ?>
+
     <script>
         $(document).ready(function() {
             //Định dạng tiền

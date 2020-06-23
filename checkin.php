@@ -4,17 +4,8 @@ session_start();
 <!doctype html>
 <html lang="vi">
 
-<head>
-    <title>Google House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="asset/favicon.ico">
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/custom.css">
-    <link rel="stylesheet" href="asset/css/all.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-</head>
+<!-- HEAD TAG -->
+<?php require_once("./components/head-tag.php") ?>
 
 <body>
     <!-- Kết nối data base và lấy thông tin các dịch vụ -->
@@ -77,33 +68,33 @@ session_start();
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title text-danger font-weight-bold">1) Điền thông tin khách hàng
+                                    <h5 class="card-title text-danger font-weight-bold">Thông tin khách thuê
                                     </h5>
                                     <h6 class="card-subtitle mb-2 text-muted blockquote-footer"><em>Người đại diện</em>
                                     </h6>
                                     <hr>
                                     <form>
                                         <div class="form-group">
-                                            <label><i class="far fa-user"></i> Họ tên</label>
+                                            <label class="ml-2 text-bold">Họ tên</label>
                                             <input type="text" class="form-control" name="txtName" placeholder="Nhập đầy đủ họ tên" autofocus required>
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="fas fa-transgender"></i> Giới tính</label>
+                                            <label class="ml-2 text-bold">Giới tính</label>
                                             <select name="cmbGender" class="form-control" required>
                                                 <option>Nam</option>
                                                 <option>Nữ</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="far fa-id-card"></i> Số CMND / Hộ chiếu</label>
+                                            <label class="ml-2 text-bold">Số CMND / Hộ chiếu</label>
                                             <input name="txtNameID" type="number" class="form-control" placeholder="Căn cứ theo số hiệu ghi trên thẻ" required>
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="fas fa-mobile-alt"></i> Số điện thoại</label>
+                                            <label class="ml-2 text-bold">Số điện thoại</label>
                                             <input name="txtPhone" type="number" class="form-control" placeholder="Số điện thoại liên lạc của người thuê" required>
                                         </div>
                                         <div class="form-group">
-                                            <label><i class="fas fa-map-marked-alt"></i> Địa chỉ</label>
+                                            <label class="ml-2 text-bold">Địa chỉ</label>
                                             <textarea name="txtAddress" rows="4" class="form-control" placeholder="Địa chỉ ghi trên CMND / Hộ chiếu" required></textarea>
                                         </div>
 
@@ -116,7 +107,7 @@ session_start();
                         <div class="col-md-6">
                             <div class="card panel-room-info-checkin">
                                 <div class="card-body">
-                                    <h5 class="card-title text-danger font-weight-bold">2) Điền thông tin Phòng</h5>
+                                    <h5 class="card-title text-danger font-weight-bold">Thông tin Phòng</h5>
                                     <h6 class="card-subtitle mb-2 text-muted blockquote-footer"><em>Phòng chuẩn bị cho
                                             thuê</em></h6>
                                     <hr>
@@ -124,40 +115,35 @@ session_start();
                                     <?php foreach ($get_thongtinphong as $thong_tin_phong) { ?>
                                         <table>
                                             <tr>
-                                                <td><strong><i class="fas fa-home"></i>
-                                                        Phòng:</strong></td>
+                                                <td><strong>Phòng:</strong></td>
                                                 <td>
-                                                    <span class="text-primary">
+                                                    <span class="ml-4 text-primary">
                                                         <?php echo $thong_tin_phong["TenTang"] . " - Phòng " . $thong_tin_phong["TenPhong"] ?>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong><i class="fas fa-file-invoice-dollar"></i>
-                                                        &nbsp;Giá thuê:</strong></td>
+                                                <td><strong>Giá thuê:</strong></td>
                                                 <td>
-                                                    <span class="text-danger"><?php echo $thong_tin_phong["SoTienThue"] ?> /tháng</span>
+                                                    <span class="ml-4 text-danger"><?php echo $thong_tin_phong["SoTienThue"] ?> /tháng</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong><i class="fas fa-wifi"></i>
-                                                        Internet: </strong></td>
+                                                <td><strong>Internet: </strong></td>
                                                 <td>
-                                                    <span class="text-danger"><?php echo $tieninternet ?> /tháng</span>
+                                                    <span class="ml-4 text-danger"><?php echo $tieninternet ?> /tháng</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong><i class="fas fa-bolt"></i>
-                                                        &nbsp;&nbsp;Giá Điện:</strong></td>
+                                                <td><strong>Giá Điện:</strong></td>
                                                 <td>
-                                                    <span class="text-danger"><?php echo $tiendien ?> /kWh
+                                                    <span class="ml-4 text-danger"><?php echo $tiendien ?> /kWh
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong><i class="fas fa-tint"></i>
-                                                        &nbsp;&nbsp;Giá nước:</strong></td>
+                                                <td><strong>Giá nước:</strong></td>
                                                 <td>
-                                                    <span class="text-danger"><?php echo $tiennuoc ?> /m<sup>2</sup></span>
+                                                    <span class="ml-4 text-danger"><?php echo $tiennuoc ?> /m<sup>2</sup></span>
                                                 </td>
                                             </tr>
                                         </table>
@@ -186,11 +172,9 @@ session_start();
 
                         </div>
                     </div>
-                    <center>
-                        <button name="btnRegis" type="submit" class="btn btn-lg btn-success"><i class="far fa-check-circle"></i> Bắt đầu
-                            cho
-                            thuê</button>
-                        <a href="index.php" class="btn btn-default btn-lg"><i class="fas fa-times"></i> Hủy</a>
+                    <center class="mb-5 mt-5">
+                        <button name="btnRegis" type="submit" class="btn btn-success btn-lg ml-2 mr-2">Bắt đầu cho thuê</button>
+                        <a href="index.php" class="btn btn-danger btn-lg ml-2 mr-2">Hủy</a>
                     </center>
                 </div>
             </form>
@@ -198,13 +182,7 @@ session_start();
     </main>
     <hr>
     <?php require_once("./components/footer.php"); ?>
-    <script src="asset/js/jquery-3.3.1.min.js"></script>
-    <script src="asset/js/popper.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/custom.js">
-    </script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <?php require_once("./components/script-tag.php"); ?>
     <script>
         $(document).ready(function() {
             // Gán link cho tr của table

@@ -1,31 +1,26 @@
-<?php 
-$connect = mysqli_connect('localhost','root','','qlnt');
-mysqli_set_charset($connect,"utf8");
-$arr_dichvu = mysqli_query($connect,"
-select * from dichvu where id = 1
-");
+<?php
+$connect = mysqli_connect('localhost', 'root', '', 'qlnt');
+mysqli_set_charset($connect, "utf8");
+$arr_dichvu = mysqli_query($connect, "select * from dichvu where id = 1");
 foreach ($arr_dichvu as $dien) {
-$tiendien = $dien["SoTien"];
+    $tiendien = $dien["SoTien"];
 }
-$arr_dichvu2 = mysqli_query($connect,"
-select * from dichvu where id = 2
-");
+$arr_dichvu2 = mysqli_query($connect, "select * from dichvu where id = 2");
 foreach ($arr_dichvu2 as $nuoc) {
-$tiennuoc = $nuoc["SoTien"];
+    $tiennuoc = $nuoc["SoTien"];
 }
-$arr_dichvu3 = mysqli_query($connect,"
-select * from dichvu where id = 4
-");
+$arr_dichvu3 = mysqli_query($connect, "select * from dichvu where id = 4");
 foreach ($arr_dichvu3 as $internet) {
-$tieninternet = $internet["SoTien"];
+    $tieninternet = $internet["SoTien"];
 }
 ?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <!-- Logo/Brand -->
-            <a class="navbar-brand" href="index.php">
-                <img src="./asset/img/ui/logo.png" width="100" height="auto" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand d-flex align-items-center text-bold" href="index.php">
+                <img src="./asset/img/ui/homeflat_106039.png" width="48" height="auto" class="d-inline-block align-top" alt="">
+                <span class="ml-3">HOME ViLANDS</span>
             </a>
 
             <!-- Nút chức năng của Mobile -->
@@ -37,16 +32,13 @@ $tieninternet = $internet["SoTien"];
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php"><i class="fas fa-home text-primary"></i> Trang
-                            chủ</span></a>
+                        <a class="nav-link hover-links" href="index.php">Trang chủ</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="room.php"><i class="fas fa-cube text-success"></i> Quản lý
-                            phòng</span></a>
+                        <a class="nav-link hover-links" href="room.php">Quản lý phòng</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link" data-toggle="modal" data-target="#configModal"><i class="fas fa-cogs text-danger"></i> Điều chỉnh chi
-                            phí</span></a>
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#configModal">Điều chỉnh chi phí</a>
                         <!-- Modal thiết lập chi phí -->
                         <div class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -96,21 +88,18 @@ $tieninternet = $internet["SoTien"];
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="revenue.php"><i class="far fa-chart-bar text-warning"></i> Thống
-                            kê doanh
-                            thu</span></a>
+                        <a class="nav-link" href="revenue.php">Thống kê doanh thu</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active disable-block">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle btn-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="far fa-user text-success"></i>
+                                <i class="far fa-user text-success"></i>
                                 <?php
-                                    if(isset($_SESSION['User'])) {
-                                        echo $_SESSION['User'];
-                                    }
-                                    else {
-                                        echo ' Guest';
-                                    }
+                                if (isset($_SESSION['User'])) {
+                                    echo $_SESSION['User'];
+                                } else {
+                                    echo ' Guest';
+                                }
                                 ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -164,4 +153,4 @@ $tieninternet = $internet["SoTien"];
     </nav>
     <!-- Quay lên đầu -->
     <a href="javascript:" id="return-to-top"><i class="far fa-arrow-alt-circle-up"></i></a>
-</header> 
+</header>

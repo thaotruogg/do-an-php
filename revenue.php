@@ -4,17 +4,8 @@ session_start();
 <!doctype html>
 <html lang="vi">
 
-<head>
-    <title>Google House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="asset/favicon.ico">
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/custom.css">
-    <link rel="stylesheet" href="asset/css/all.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-</head>
+<!-- HEAD TAG -->
+<?php require_once("./components/head-tag.php") ?>
 
 <body>
     <!-- Setup timzone cho dữ liệu datetime -->
@@ -27,7 +18,7 @@ session_start();
     mysqli_set_charset($connect, "utf8");
     ?>
     <!-- Thực hiện query truy vấn ra được danh sách những phòng chưa trả tiền -->
-    <?php 
+    <?php
     $arr_chuatratien = mysqli_query($connect, "
         SELECT
             phong.TenPhong,
@@ -122,7 +113,7 @@ session_start();
             return false;
         }
 
-        if (($number >= 0 && (int)$number < 0) || (int)$number < 0 - PHP_INT_MAX) {
+        if (($number >= 0 && (int) $number < 0) || (int) $number < 0 - PHP_INT_MAX) {
             // overflow
             trigger_error(
                 'convert_number_to_words only accepts numbers between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX,
@@ -146,7 +137,7 @@ session_start();
                 $string = $dictionary[$number];
                 break;
             case $number < 100:
-                $tens   = ((int)($number / 10)) * 10;
+                $tens   = ((int) ($number / 10)) * 10;
                 $units  = $number % 10;
                 $string = $dictionary[$tens];
                 if ($units) {
@@ -163,7 +154,7 @@ session_start();
                 break;
             default:
                 $baseUnit = pow(1000, floor(log($number, 1000)));
-                $numBaseUnits = (int)($number / $baseUnit);
+                $numBaseUnits = (int) ($number / $baseUnit);
                 $remainder = $number % $baseUnit;
                 $string = convert_number_to_words($numBaseUnits) . ' ' . $dictionary[$baseUnit];
                 if ($remainder) {
@@ -176,7 +167,7 @@ session_start();
         if (null !== $fraction && is_numeric($fraction)) {
             $string .= $decimal;
             $words = array();
-            foreach (str_split((string)$fraction) as $number) {
+            foreach (str_split((string) $fraction) as $number) {
                 $words[] = $dictionary[$number];
             }
             $string .= implode(' ', $words);
@@ -196,15 +187,16 @@ session_start();
                             <h6 class="card-subtitle mb-12 text-muted blockquote-footer"><em>Số tiền thu được từ các
                                     phòng đã đóng tiền</em>
                             </h6>
-                            <h5 class="text-right font-weight-bold">Tổng cộng đã thu được: <span class="text-success">
+                            <h5 class="text-right font-weight-bold">Tổng doanh thu: <span class="text-success">
                                     <!-- Tính tổng tiền thu được -->
-                                    <?php 
+                                    <?php
                                     $sum = 0;
                                     foreach ($arr_thongke as $arr) {
                                         $sum += $arr['TongTien'] + $arr["SoTienThue"];
                                     }
                                     echo number_format($sum) . ' ₫ </span></h5></br>';
-                                    echo '<h6 class="text-right text-success font-italic">' . convert_number_to_words($sum) . '</h6>';
+
+                                    // echo '<h6 class="text-right text-success font-italic">' . convert_number_to_words($sum) . '</h6>';
                                     ?>
                                     <hr>
                                     <div class="text-center">
@@ -223,22 +215,22 @@ session_start();
                                             <tbody>
                                                 <!-- Đổ dữ liệu ra bảng -->
                                                 <?php foreach ($arr_thongke as $arr) { ?>
-                                                <tr class='clickable-row' data-href='details.php'>
-                                                    <td><?php echo $arr["TenPhong"] ?></td>
-                                                    <td><?php echo number_format($arr["SoTienThue"]) . ' ₫'; ?></td>
-                                                    <td><?php echo number_format($arr["TienDien"]) . ' ₫'; ?></td>
-                                                    <td><?php echo number_format($arr["TienNuoc"]) . ' ₫'; ?></td>
-                                                    <td><?php echo number_format($arr["TienInternet"]) . ' ₫'; ?></td>
-                                                    <td><?php echo $arr["ThoiGian"] ?></td>
-                                                    <td class="text-danger font-weight-bold">
-                                                        <?php
-                                                        $tong =  $arr["TongTien"] + $arr["SoTienThue"];
-                                                        echo number_format($tong) . ' ₫';;
-                                                        ?>
-                                                    </td>
-                                                </tr>
-                                                <?php 
-                                            } ?>
+                                                    <tr class='clickable-row' data-href='details.php'>
+                                                        <td><?php echo $arr["TenPhong"] ?></td>
+                                                        <td><?php echo number_format($arr["SoTienThue"]) . ' ₫'; ?></td>
+                                                        <td><?php echo number_format($arr["TienDien"]) . ' ₫'; ?></td>
+                                                        <td><?php echo number_format($arr["TienNuoc"]) . ' ₫'; ?></td>
+                                                        <td><?php echo number_format($arr["TienInternet"]) . ' ₫'; ?></td>
+                                                        <td><?php echo $arr["ThoiGian"] ?></td>
+                                                        <td class="text-danger font-weight-bold">
+                                                            <?php
+                                                            $tong =  $arr["TongTien"] + $arr["SoTienThue"];
+                                                            echo number_format($tong) . ' ₫';;
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -250,15 +242,8 @@ session_start();
     </main>
     <hr>
     <?php require_once("./components/footer.php"); ?>
-    <script src="asset/js/jquery-3.3.1.min.js">
-    </script>
-    <script src="asset/js/popper.min.js">
-    </script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/custom.js">
-    </script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <?php require_once("./components/script-tag.php"); ?>
+
     <script>
         $(document).ready(function() {
             // Việt hóa datatable
@@ -304,4 +289,4 @@ session_start();
     </script>
 </body>
 
-</html> 
+</html>
