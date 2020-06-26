@@ -108,11 +108,6 @@ session_start();
                                             <!-- Đổ dữ liệu ra bảng -->
                                             <?php foreach ($arr_thongke as $arr) {
                                                 $idPhong = $arr["Id"] ?>
-                                            <!-- 
-                                                Author: Khoi
-                                                Date  : 21/03/2019 11:06 AM
-                                                Task  : Làm chức năng xóa phòng
-                                            -->
                                             <?php 
                                             if (isset($_POST["btnDeleteRoom" . $arr["Id"]])) {
                                                 mysqli_query($connect, "DELETE FROM `phong` WHERE `phong`.`Id` =" . $idPhong);
@@ -122,7 +117,7 @@ session_start();
                                             <!--  -->
                                             <tr class='clickable-row' data-href='details.php'>
                                                 <td><?php echo $arr["TenTang"]; ?></td>
-                                                <td><?php echo '<a href="#" data-toggle="modal" data-target="#editModal">' . $arr["TenPhong"] . '&nbsp;&nbsp;<i class="far fa-edit text-warning"></i></a>'; ?></td>
+                                                <td><?php echo '<a href="#" class="text-bold" data-toggle="modal" data-target="#editModal">' . $arr["TenPhong"] . '</a>'; ?></td>
                                                 <td><?php echo number_format($arr["SoTienThue"]) . ' ₫'; ?></td>
                                                 <td><?php echo number_format($arr["SoDien"]); ?></td>
                                                 <td><?php echo number_format($arr["SoNuoc"]); ?></td>
