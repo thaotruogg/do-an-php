@@ -20,7 +20,7 @@ if (isset($_POST["btnLogin"])) {
     $txtAccount = $_POST["txtAccount"];
     $txtPassword = $_POST["txtPassword"];
 
-    $result = mysqli_query($connect, "SELECT * FROM `admin` WHERE username = '" . $txtAccount . "' AND passwords='" . $txtPassword . "'");
+    $result = mysqli_query($connect, "SELECT * FROM `user` WHERE user_name = '" . $txtAccount . "' AND password='" . $txtPassword . "'");
     $rows_count = mysqli_num_rows($result);
     // $getName = mysqli_query($connect,"SELECT `admin`.`Name` FROM `admin` WHERE `admin`.`UserName` = '" . $txtAccount . "' AND `admin`.`Passwords`='" . $txtPassword . "'");
 

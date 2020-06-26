@@ -11,6 +11,7 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
         }
         .hover-links {
             color: "#fff";
@@ -24,6 +25,9 @@
         }
         .disable-block {
             display: none;
+        }
+        .full-screen {
+            min-height: 100vh;
         }
     </style>
 </head>

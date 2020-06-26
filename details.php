@@ -381,7 +381,7 @@
                     </div>
                 </div>
             </div>
-            <a href="index.php"><i class="fa fa-arrow-left"></i> Trở về trang quản lý</a>
+            <a href="/"><i class="fa fa-arrow-left"></i> Trở về trang quản lý</a>
         </div>
 
         <!-- Modal ảnh chụp hợp đồng -->

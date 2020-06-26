@@ -18,7 +18,7 @@ foreach ($arr_dichvu3 as $internet) {
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <!-- Logo/Brand -->
-            <a class="navbar-brand d-flex align-items-center text-bold" href="index.php">
+            <a class="navbar-brand d-flex align-items-center text-bold" href="/">
                 <img src="./asset/img/ui/homeflat_106039.png" width="48" height="auto" class="d-inline-block align-top" alt="">
                 <span class="ml-3">HOME ViLANDS</span>
             </a>
@@ -32,7 +32,7 @@ foreach ($arr_dichvu3 as $internet) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link hover-links" href="index.php">Trang chủ</a>
+                        <a class="nav-link hover-links" href="/">Trang chủ</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link hover-links" href="room.php">Quản lý phòng</a>

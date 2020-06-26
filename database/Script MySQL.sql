@@ -123,10 +123,10 @@ CREATE TABLE `hopdong` (
 -- Đang đổ dữ liệu cho bảng `hopdong`
 --
 
-INSERT INTO `hopdong` (`Id`, `IdNguoiThue`, `TenNguoiThue`, `IdPhong`, `TenPhong`, `SoTienCoc`, `NgayBatDau`, `NgayKetThuc`) VALUES
-(1, 1, 'Trần Đình Sơn', 1, '101', 2000000, '2019-03-16', '2019-03-23'),
-(2, 2, 'Kiến Đình Khôi', 4, '202', 2000000, '2019-03-03', '2019-03-31'),
-(4, 10, 'Nguyễn Thị Thu Hiền', 3, '102', 2000000, '2019-03-17', '2019-09-16');
+-- INSERT INTO `hopdong` (`Id`, `IdNguoiThue`, `TenNguoiThue`, `IdPhong`, `TenPhong`, `SoTienCoc`, `NgayBatDau`, `NgayKetThuc`) VALUES
+-- (1, 1, 'Trần Đình Sơn', 1, '101', 2000000, '2019-03-16', '2019-03-23'),
+-- (2, 2, 'Kiến Đình Khôi', 4, '202', 2000000, '2019-03-03', '2019-03-31'),
+-- (4, 10, 'Nguyễn Thị Thu Hiền', 3, '102', 2000000, '2019-03-17', '2019-09-16');
 
 -- --------------------------------------------------------
 
@@ -146,11 +146,10 @@ CREATE TABLE `nguoithue` (
 -- Đang đổ dữ liệu cho bảng `nguoithue`
 --
 
-INSERT INTO `nguoithue` (`Id`, `TenNguoiThue`, `SDTNguoiThue`, `QueQuan`, `CMND`) VALUES
-(1, 'Trần Đình Sơn', '0386492338', 'Thái Bình', '152171454'),
-(2, 'Kiến Đình Khôi', '0388855500', 'Trà Vinh', '136252454'),
-(9, '312321', '32131', '321321', '421312'),
-(10, 'Nguyễn Thị Thu Hiền', '0366008941', 'ABC DEG', '12345689');
+-- INSERT INTO `nguoithue` (`Id`, `TenNguoiThue`, `SDTNguoiThue`, `QueQuan`, `CMND`) VALUES
+-- (1, 'Hoàng Trần Trí', '0386492338', 'Tiềng Giang', '152171454'),
+-- (2, 'Nguyễn Thị Kiều Thi', '0388855500', 'Bến Tre', '136252454'),
+-- (3, 'Trương Minh Thảo', '034212313', 'Long An', '421312'),
 
 -- --------------------------------------------------------
 
