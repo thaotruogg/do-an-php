@@ -47,9 +47,9 @@ mysqli_set_charset($connect, "utf8");
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col d-flex flex-row">
+                    <div class="col d-flex">
                         <!-- Tầng + Phòng -->
-                        <div class="col-lg-8 col-xl-8 col-md-7 col-sm-6">
+                        <div class="col-lg-8 col-xl-8 col-md-7 col-sm-12">
                             <div class="card">
                                 <?php for ($i = 1; $i <= $total_record; $i++) { ?>
                                     <div class="card-header label-floor text-bold text-primary">
@@ -67,7 +67,7 @@ mysqli_set_charset($connect, "utf8");
                                                 $total_hopdong = mysqli_num_rows($arrs_check_hopdong);
                                                 ?>
                                                 <?php if ($total_hopdong < 1) { ?>
-                                                    <div class="col-3">
+                                                    <div class="col-xl-3 col-sm-12 my-2">
                                                         <a href="checkin.php?idphong=<?php echo $arr["Id"] ?>" class="btn btn-room-sm btn-success" style="font-size: 14px; width: 100%; height: 62px;"><i class="fas fa-home"></i>
                                                             <?php echo $arr["TenPhong"] ?>
                                                         </a>
@@ -81,7 +81,7 @@ mysqli_set_charset($connect, "utf8");
                                                         $datediff = $sub_date;
                                                         $so_ngay_con_lai = floor($datediff / (60 * 60 * 24));
                                                         ?>
-                                                        <div class="col-3">
+                                                        <div class="col-xl-3 col-sm-12 my-2">
                                                             <a href="details.php?idphong=<?php echo $arr["Id"] ?>&idnguoithue=<?php echo $arrHopDong["IdNguoiThue"] ?>" style="font-size: 14px; width: 100%; height: 62px;" class="btn btn-room-sm <?php if ($so_ngay_con_lai > 7) echo "btn-danger";
                                                                                                                                                                                                                                                     else echo "btn-warning"; ?>"><i class="fas fa-home"></i>
                                                                 <?php echo $arr["TenPhong"] . "<br>" . $arrHopDong["TenNguoiThue"] ?>
@@ -101,7 +101,7 @@ mysqli_set_charset($connect, "utf8");
                             </div>
                         </div>
                         <!-- Phí sinh hoạt -->
-                        <div class="col-lg-4 col-xl-4 col-md-5 col-sm-6">
+                        <div class="col-lg-4 col-xl-4 col-md-5 col-sm-12">
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
                                     <h5 class="card-title text-danger font-weight-bold text-center">Phí sinh hoạt</h5>
